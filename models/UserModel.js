@@ -10,8 +10,8 @@ const User = sequelize.define('user', {
     comment: "This is the table for all user",
     // If you want to use timestamps
     timestamps: true,
-    // If you want to use existing database 
-    // TODO Remember to put timestamps in schema
+    // TODO If you want to use existing database and tables 
+    // remember to put timestamps in your schema (reference in db/init/00-database.sql)
     freezeTableName: true,
     tableName: 'user',
 });

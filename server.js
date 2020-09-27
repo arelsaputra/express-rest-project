@@ -14,7 +14,7 @@ sequelize.authenticate().then(() => {
 })
 
 // Middleware
-app.use(express.urlencoded({ exrended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(cors());
@@ -27,11 +27,13 @@ app.use(userRoutes);
 // Handle Errors
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.sendFile(path.join(__dirname, './public/500.html'));
 })
 app.use((req, res, next) => {
     res.status(404).send('The page cannot be found!');
 })
+
+// Export app for testing
+module.exports = app;
 
 // Start server
 const PORT = process.env.PORT || 3000;

@@ -1,6 +1,7 @@
 FROM node:alpine
 
-# working directory 
+# working directory
+RUN mkdir -p /usr/src/app 
 WORKDIR /usr/src/app
 
 # app dependencies
@@ -14,5 +15,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD ["npm", "start"]
+CMD ["npm", "run", "start.dev"]
 

@@ -23,6 +23,9 @@ services:
       context: .
     env_file:
       - ./.env
+    # Essential for nodemon restart working
+    volumes:
+      - ./:/usr/src/app
     networks:
       - network
     depends_on:
