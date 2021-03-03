@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const sequelize = require('./database');
 const compression = require('compression');
-var swaggerJsdoc = require('swagger-jsdoc');
-var swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 require('dotenv').config();
 
 const app = express();
@@ -34,12 +34,9 @@ app.use((req, res, next) => {
     res.status(404).send('The page cannot be found!');
 })
 
-// Export app for testing
-module.exports = app;
-
 // Set up swagger ui
 const options = {
-    definition: {
+  definition: {
     openapi: "3.0.0",
     info: {
       title: "Express-rest API Swagger Documentation",
@@ -54,16 +51,14 @@ const options = {
         url: "https://github.com/yfchiuaa",
       },
     },
-    servers: [
-      {
-        url: "http://localhost:8080/api/user",
-      },
-    ],
   },
   apis: ["./routes/UserRoutes.js"],
-}
-const specs = swaggerJsdoc(options);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+};
+const specs = swaggerJsDoc(options);
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(specs));
+
+// Export app for testing
+module.exports = app;
 
 // Start server
 const PORT = process.env.PORT || 3000;
