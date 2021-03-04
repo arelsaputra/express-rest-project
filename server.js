@@ -26,14 +26,6 @@ app.use(compression());  // reduce file size before sending to web browser to er
 const userRoutes = require('./routes/UserRoutes');
 app.use(userRoutes);
 
-// Handle Errors
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-})
-app.use((req, res, next) => {
-    res.status(404).send('The page cannot be found!');
-})
-
 // Set up swagger ui
 const options = {
   definition: {
@@ -52,10 +44,21 @@ const options = {
       },
     },
   },
-  apis: ["./routes/UserRoutes.js"],
+  apis: ['./routes/**.js'],
 };
 const specs = swaggerJsDoc(options);
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(specs));
+const swaggerRouter = require('express').Router();
+swaggerRouter.use('/api-docs', swaggerUi.serve);
+swaggerRouter.get('/api-docs', swaggerUi.setup(specs));
+app.use(swaggerRouter);
+
+// Handle Errors
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+})
+app.use((req, res, next) => {
+    res.status(404).send('The page cannot be found!');
+})
 
 // Export app for testing
 module.exports = app;
