@@ -39,15 +39,15 @@ const options = {
         url: "https://spdx.org/licenses/MIT.html",
       },
       contact: {
-        name: "Charlie Chiu",
+        name: "Charlie",
         url: "https://github.com/yfchiuaa",
       },
     },
   },
-  apis: ['./routes/**.js'],
+  apis: ['./models/UserModel.js', './routes/UserRoutes.js'],
 };
 const specs = swaggerJsDoc(options);
-const swaggerRouter = require('express').Router();
+const swaggerRouter = express.Router();
 swaggerRouter.use('/api-docs', swaggerUi.serve);
 swaggerRouter.get('/api-docs', swaggerUi.setup(specs));
 app.use(swaggerRouter);

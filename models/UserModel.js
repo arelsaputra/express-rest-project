@@ -1,6 +1,32 @@
 const { Sequelize } = require('sequelize');
 const sequelize = require('../database');
 
+/**
+ * @swagger
+ *  components:
+ *    schemas:
+ *      User:
+ *        type: object
+ *        required:
+ *          - email
+ *          - first_name
+ *          - last_name
+ *        properties:
+ *          email:
+ *            type: string
+ *            format: email
+ *            description: The email of the user
+ *          first_name:
+ *            type: string
+ *            description: The first name of the user
+ *          last_name:
+ *            type: string
+ *            description: The last name of the user
+ *        example:
+ *           email: example@email.com
+ *           first_name: Charlie
+ *           last_name: Charlie
+ */
 const User = sequelize.define('user', {
     id: { type: Sequelize.INTEGER, allowNull: false, autoIncrement : true, unique: true },
     email: { type: Sequelize.STRING(100), primaryKey: true, allowNull: false},

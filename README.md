@@ -108,7 +108,7 @@ NoSQL db
 - [x] Nodemoni watch code change and automatic update with container
 - [x] Unit test
 - [ ] github docker registry workflow
-- [ ] Swagger UI support
+- [x] Swagger UI support
 - [ ] Mongodb option
 - [ ] add logging (Morgan)
 - [ ] command line prompt for setting up instruction (setup.sh)
