@@ -1,0 +1,42 @@
+name: Build Workflow for push
+
+on: 
+  push:
+    branches:
+      - master
+  page_build:
+  # Schedule the job with cron syntax
+  schedule:
+    - cron: '*/15 * * * *'
+
+env:
+  PUBLISHER: yfchiuaa
+
+jobs:
+  build:
+    name: Build job with push
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout-repo
+        name: Check out the repo
+        uses: actions/checkout@2
+      - id: build-api-image
+        name: Build the image for api
+        uses: docker/build-push-action@v1
+        with:
+          # TODO: Finish this push set up
+          registry: docker.pkg.github.com
+          repository: ${{env.IMAGE_REPOSITapi
+          build_args: KRIS_MG_API_KEY=${{ secrets.KRIS_MAILGUN_API }}
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+          path: ./api
+          dockerfile: ./api/Dockerfile
+          tags: latest
+
+
+
+
+
+
+
