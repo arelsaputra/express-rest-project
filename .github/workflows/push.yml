@@ -24,15 +24,6 @@ jobs:
         name: Build the image for api
         uses: docker/build-push-action@v1
         with:
-          # TODO: Finish this push set up
-          registry: docker.pkg.github.com
-          repository: ${{env.IMAGE_REPOSITapi
-          build_args: KRIS_MG_API_KEY=${{ secrets.KRIS_MAILGUN_API }}
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
-          path: ./api
-          dockerfile: ./api/Dockerfile
-          tags: latest
 
 
 
