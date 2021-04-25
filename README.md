@@ -29,6 +29,19 @@ The practices and structures here is what I used and improved through the projec
 +-- ...
 ```
 
+## Quick set up
+
+You can quickly start with this template with npm or npx by entering
+
+```sh
+# With npm
+npm install -g create-chill-express-api
+
+# With npx
+npx create-chill-express-api your-app-name
+
+```
+
 ## Set up
 
 To get started, please first change the name of `.env.example` to `.env` to set up all basic environment variables while you can also customize and add into there, but if you just wanna have a quick start, you can simply change the name to set it up. 
