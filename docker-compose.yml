@@ -1,10 +1,8 @@
-version: "3.3"
-
 services:
   db:
     container_name: express-rest-db
     restart: always
-    image: express-rest-db
+    image: postgres
     build:
       context: ./db
     volumes:
@@ -14,7 +12,11 @@ services:
     networks:
       - network
     ports:
-      - "5432:5432"
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: inventory
   api:
     container_name: express-rest
     restart: always
@@ -31,7 +33,9 @@ services:
     depends_on:
       - db
     ports:
-      - "8080:8080"
+      - '8080:8080'
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/inventory
 
 networks:
   network:
