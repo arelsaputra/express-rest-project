@@ -6,6 +6,8 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 require('dotenv').config();
 
+console.log('🔥 Starting Express app...');
+
 const app = express();
 
 // 🔹 Tambahkan ini di paling awal setelah `const app = express();`
@@ -15,14 +17,15 @@ app.get('/', (req, res) => {
 });
 
 // Database
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connected to the database');
-  })
-  .catch((err) => {
-    console.log('Unable to connect to databases:', err);
-  });
+// sequelize
+//  .authenticate()
+//  .then(() => {
+//    console.log('✅ Connected to the database');
+//  })
+//  .catch((err) => {
+//    console.error('❌ Unable to connect to the database:', err.message);
+//    process.exit(1); // force exit agar Cloud Run tahu gagal
+//  });
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
