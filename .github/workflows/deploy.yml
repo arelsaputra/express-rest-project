@@ -36,4 +36,8 @@ jobs:
             --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/express-rest \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
+            --min-instances 1 \
+            --max-instances 5 \
+            --concurrency 80 \
+            --memory 512Mi \
             --allow-unauthenticated
