@@ -27,7 +27,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/express-rest ./express-rest
+          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/express-rest .
           docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/express-rest
 
       - name: Deploy to Cloud Run
