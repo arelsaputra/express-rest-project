@@ -123,11 +123,11 @@ npm start
 ```
 #### Model layer
 
-Pertama, buat model data layanan dan tabel Anda dengan properti tabel dan properti bidang di `/models`. Saat ini saya menggunakan [sequelize ORM](https://sequelize.org/master/) untuk mendefinisikan model. Anda dapat merujuk ke `models/UserModel.js` sebagai contoh.
+First, create your service and table data models with table properties and field properties in `/models`. I'm currently using the Sequelize ORM to define the models. You can refer to `models/UserModel.js` for an example.
 
 #### Routing layer
 
-Setelah Anda memiliki model layanan, Anda dapat membuat rute yang terkait dengan layanan ini di `\routes` dengan router ekspres. Satu hal yang perlu diperhatikan di sini adalah, demi memisahkan logika bisnis dari router, router di sini tidak akan menangani logika layanan apa pun, melainkan hanya meneruskan data ke lapisan layanan. Anda dapat merujuk ke `routes/UserRoutes.js`.
+Once you have a service model, you can create routes associated with that service in `\routes` with express router. One thing to note here is that, to separate business logic from the router, the router here will not handle any service logic, but will simply pass data to the service layer. You can refer to `routes/UserRoutes.js`.
 
 #### Service layer
 
