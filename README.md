@@ -29,6 +29,7 @@ This project is a REST API application implementation using Express.js and Postg
 ## Implementation Results and Screenshots
 
 1. Autoscaling Configuration in Google Cloud Run
+   
 https://Picture9.png
 ```s
 ...
@@ -154,9 +155,9 @@ NoSQL db
 
 ```s
 ...
-Repository: https://github.com/arelsaputra/express-rest-project
-Aplikasi Live: https://express-rest-434589199417.asia-southeast2.run.app
-Pipeline: GitHub Actions
+Repository: (https://github.com/arelsaputra/express-rest-project)
+Aplikasi Live: (https://express-rest-434589199417.asia-southeast2.run.app)
+Pipeline CI/CD: ((https://github.com/arelsaputra/express-rest-project/actions/runs/16806925513/workflow?))
 ...
 ```
 ## TODO
