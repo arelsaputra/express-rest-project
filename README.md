@@ -1,12 +1,10 @@
-# Express REST API starter template with postgreSQL and docker
+# Proyek Final: Deployment Aplikasi Full-Stack di Cloud
 
 ## Background
 
-This starter template is for quickly getting started with express + PostgreSQL + docker for a rest backend, which is the tech stack I personally find good enough for most of use case I encountered so far.
+Proyek ini adalah implementasi aplikasi REST API menggunakan Express.js dan PostgreSQL yang di-deploy ke Google Cloud Run. Aplikasi ini dilengkapi dengan CI/CD, monitoring, dan autoscaling untuk memenuhi kriteria tugas final.
 
-The practices and structures here is what I used and improved through the projects with express, Postgres and docker, some of them have been proved with the production environment, so it would be a good template for anyone to get started. But I am still constantly learning node.js so you are very welcome and appreciated to provide any suggestion on them.
-
-## Template structure
+## Struktur Proyek
 
 ```s
 .
@@ -27,6 +25,42 @@ The practices and structures here is what I used and improved through the projec
 +-- .env.example
 +-- ...
 ```
+
+## Fitur Utama
+- Backend: REST API dengan Express.js
+- Database: PostgreSQL dengan Docker
+- CI/CD: Otomatisasi build, test, dan deploy menggunakan GitHub Actions
+- Deployment: Google Cloud Run dengan konfigurasi autoscaling
+- Monitoring: Google Cloud Monitoring dan Grafana
+- Keamanan: Penggunaan environment variables untuk rahasia
+- Dokumentasi API: Swagger UI lengkap
+
+## Panduan Penggunaan
+
+Prasyarat
+```s
+
+...
++--  Docker dan Docker Compose
+
++-- Akun Google Cloud
+
++-- Akun GitHub
+...
+```
+
+#Menjalankan Secara Lokal
+
+Clone repository:
+```s
+git clone https://github.com/arelsaputra/express-rest-project
+```
+Ubah nama file .env.example menjadi .env dan sesuaikan konfigurasi.
+Jalankan dengan Docker Compose:
+```s
+docker-compose up -d
+```
+Aplikasi akan berjalan di localhost:8080 dan PostgreSQL di localhost:5432.
 
 ## Quick set up
 
