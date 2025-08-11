@@ -80,9 +80,9 @@ https://Picture4.png
 Prerequisite
 ```s
 ...
-+--  Docker dan Docker Compose
-+-- Akun Google Cloud
-+-- Akun GitHub
+Docker dan Docker Compose
+Akun Google Cloud
+Akun GitHub
 ...
 ```
 
