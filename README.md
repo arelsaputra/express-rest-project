@@ -39,6 +39,7 @@ https://Picture9.png
 ```
 
 2. API Documentation with Swagger UI
+   
 https://Picture5.png
 ```s
 ...
@@ -47,6 +48,7 @@ https://Picture5.png
 ```
 
 3. Dashboard Monitoring
+   
 https://Picture5.png
 ```s
 ...
@@ -56,6 +58,7 @@ https://Picture5.png
 ```
 
 4. Testing API with Postman
+   
 https://Picture4.png
 ```s
 ...
@@ -78,9 +81,7 @@ Prerequisite
 ```s
 ...
 +--  Docker dan Docker Compose
-
 +-- Akun Google Cloud
-
 +-- Akun GitHub
 ...
 ```
@@ -117,7 +118,6 @@ For using your own database on your local, you can set up your own database by t
 
 ```s
 npm install
-
 npm start
 ```
 #### Model layer
