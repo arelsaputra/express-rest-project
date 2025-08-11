@@ -1,8 +1,8 @@
-# Proyek Final: Deployment Aplikasi Full-Stack di Cloud
+# Final Project: Deployment of a Full-Stack Application in the Cloud
 
 ## Background
 
-Proyek ini adalah implementasi aplikasi REST API menggunakan Express.js dan PostgreSQL yang di-deploy ke Google Cloud Run. Aplikasi ini dilengkapi dengan CI/CD, monitoring, dan autoscaling untuk memenuhi kriteria tugas final.
+This project is a REST API application implementation using Express.js and PostgreSQL deployed to Google Cloud Run. The application features CI/CD, monitoring, and autoscaling to meet the final assignment criteria.
 
 ## Struktur Proyek
 
@@ -26,18 +26,55 @@ Proyek ini adalah implementasi aplikasi REST API menggunakan Express.js dan Post
 +-- ...
 ```
 
-## Fitur Utama
-- Backend: REST API dengan Express.js
-- Database: PostgreSQL dengan Docker
-- CI/CD: Otomatisasi build, test, dan deploy menggunakan GitHub Actions
-- Deployment: Google Cloud Run dengan konfigurasi autoscaling
-- Monitoring: Google Cloud Monitoring dan Grafana
-- Keamanan: Penggunaan environment variables untuk rahasia
-- Dokumentasi API: Swagger UI lengkap
+## Implementation Results and Screenshots
 
-## Panduan Penggunaan
+1. Autoscaling Configuration in Google Cloud Run
+https://Picture9.png
+```s
+...
++-- Min instances: 1 (to reduce cold starts)
++-- Max instances: 5 (to handle traffic spikes)
++-- Memory: 512MB per instance
+...
+```
 
-Prasyarat
+2. API Documentation with Swagger UI
+https://Picture5.png
+```s
+...
++-- Available at: https://express-rest-434589199417.asia-southeast2.run.app/api-docs
+...
+```
+
+3. Dashboard Monitoring
+https://Picture5.png
+```s
+...
++-- Google Cloud Monitoring is active
++-- Grafana integration for metrics visualization
+...
+```
+
+4. Testing API with Postman
+https://Picture4.png
+```s
+...
++-- API endpoint has been successfully tested with Postman
+...
+```
+
+## Key Features
+- Backend: REST API with Express.js
+- Database: PostgreSQL with Docker
+- CI/CD: Automate builds, tests, and deployments using GitHub Actions
+- Deployment: Google Cloud Run with autoscaling configuration
+- Monitoring: Google Cloud Monitoring and Grafana
+- Security: Use environment variables for secrets
+- API documentation: Comprehensive Swagger UI
+  
+## Usage Guide
+
+Prerequisite
 ```s
 ...
 +--  Docker dan Docker Compose
@@ -48,71 +85,31 @@ Prasyarat
 ...
 ```
 
-Menjalankan Secara Lokal
+Running Locally
 
 Clone repository:
 ```s
 git clone https://github.com/arelsaputra/express-rest-project
 ```
-Ubah nama file .env.example menjadi .env dan sesuaikan konfigurasi.
-Jalankan dengan Docker Compose:
+Rename the .env.example file to .env and adjust the configuration accordingly.
+Run it with Docker Compose:
 ```s
 docker-compose up -d
 ```
-Aplikasi akan berjalan di localhost:8080 dan PostgreSQL di localhost:5432.
+The application will run on localhost:8080 and PostgreSQL on localhost:5432.
 
-Deployment ke Google Cloud Run
+Deployment to Google Cloud Run
 ```s
 ...
-+--  Setup GitHub Secrets untuk GCP credentials.
-
-+-- Pipeline CI/CD akan otomatis menjalankan build dan deploy saat ada perubahan di branch main.
-
-+-- Aplikasi akan tersedia di: https://express-rest-434589199417.asia-southeast2.run.app
++-- Setup GitHub Secrets for GCP credentials.
++-- The CI/CD pipeline will automatically run builds and deploys when changes are made to the main branch.
++-- The app will be available at: https://express-rest-434589199417.asia-southeast2.run.app
 ...
 ```
 
-## Dokumentasi Teknis
+## Technical Documentation
 - CI/CD: GitHub Actions Workflow
 - API Documentation: Swagger UI
-
-## Link Penting
-
-```s
-...
-Repository: https://github.com/arelsaputra/express-rest-project
-Aplikasi Live: https://express-rest-434589199417.asia-southeast2.run.app
-Pipeline: GitHub Actions
-...
-```
-## Quick set up
-
-You can quickly start with this template with npm or npx by entering
-
-```sh
-# With npm
-npm install -g create-chill-express-api
-
-# With npx
-npx create-chill-express-api your-app-name
-
-```
-
-## Set up
-
-To get started, please first change the name of `.env.example` to `.env` to set up all basic environment variables while you can also customize and add into there, but if you just wanna have a quick start, you can simply change the name to set it up.
-
-There are 2 ways of starting the server to test the proper setup
-
-#### Docker-compose
-
-The recommend way of using it, you do not have to set up database locally and from scratch. After clone this project, in the root directory, with `docker` and `docker-compose` installed, you can simply do
-
-```s
-docker-compose up -d
-```
-
-Then your api and a database will be running on your [localhost:8080](localhost:8080) and [localhost:5432](localhost:5432) respectively.
 
 #### Local
 
@@ -123,36 +120,13 @@ npm install
 
 npm start
 ```
-
-The you should have your api server running on your [localhost:8080](localhost:8080)
-
-As long as you can see the server up and running, you are good to go.
-
-## Usage
-
-This will explain how to use this starter to get started with your own API usage
-
-### Develop
-
-This template is following the classic, bulletproof node.js 3-layer architecture, based on the **principle of separation of concerns**, so when you want to create a new service, just create these three layers for your service will be enough:
-
-```s
-...
-+-- models                  // Sequelize ORM model layer
-+-- services                // Business logic layer
-+-- routes                  // Routing and controlling layer
-...
-```
-
-This starter have an example service for your reference called User, which is an working example (when your server is up and running, this service is available), you can just follow it up, and basically it is like the following steps:
-
 #### Model layer
 
-First create your service data model and tables with the table properties and the fields properties in the `/models`. Right now I am using [sequelize ORM](https://sequelize.org/master/) for defining the model. You can refer to `models/UserModel.js` as an example
+Pertama, buat model data layanan dan tabel Anda dengan properti tabel dan properti bidang di `/models`. Saat ini saya menggunakan [sequelize ORM](https://sequelize.org/master/) untuk mendefinisikan model. Anda dapat merujuk ke `models/UserModel.js` sebagai contoh.
 
 #### Routing layer
 
-After you have your service model, you can then create the routes that relates to this service in `\routes` with express router, One remark here is that, for the sake of separating business logic from router, router here will not handle any service logic but just pass the data to services layers. You can refer to `routes/UserRoutes.js`
+Setelah Anda memiliki model layanan, Anda dapat membuat rute yang terkait dengan layanan ini di `\routes` dengan router ekspres. Satu hal yang perlu diperhatikan di sini adalah, demi memisahkan logika bisnis dari router, router di sini tidak akan menangani logika layanan apa pun, melainkan hanya meneruskan data ke lapisan layanan. Anda dapat merujuk ke `routes/UserRoutes.js`.
 
 #### Service layer
 
@@ -176,14 +150,17 @@ NoSQL db
 
 > This is also why this can only support SQL db now and cannot support NoSQL yet, planning to add option for some NoSQL db in the future
 
+## Important Links
+
+```s
+...
+Repository: https://github.com/arelsaputra/express-rest-project
+Aplikasi Live: https://express-rest-434589199417.asia-southeast2.run.app
+Pipeline: GitHub Actions
+...
+```
 ## TODO
 
-- [x] Nodemoni watch code change and automatic update with container
-- [x] Unit test
-- [ ] github docker registry workflow
-- [x] Swagger UI support
-- [ ] Mongodb option
 - [ ] add logging (Morgan)
-- [ ] command line prompt for setting up instruction (setup.sh)
-- [ ] JWT Authentication
-- [ ] Pub/Sub layer and dependencies injection
+- [ ] MongoDB Database Options
+- [ ] Implementing JWT Authentication
