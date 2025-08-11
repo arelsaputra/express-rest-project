@@ -39,7 +39,6 @@ Proyek ini adalah implementasi aplikasi REST API menggunakan Express.js dan Post
 
 Prasyarat
 ```s
-
 ...
 +--  Docker dan Docker Compose
 
@@ -49,7 +48,7 @@ Prasyarat
 ...
 ```
 
-#Menjalankan Secara Lokal
+Menjalankan Secara Lokal
 
 Clone repository:
 ```s
@@ -62,6 +61,30 @@ docker-compose up -d
 ```
 Aplikasi akan berjalan di localhost:8080 dan PostgreSQL di localhost:5432.
 
+Deployment ke Google Cloud Run
+```s
+...
++--  Setup GitHub Secrets untuk GCP credentials.
+
++-- Pipeline CI/CD akan otomatis menjalankan build dan deploy saat ada perubahan di branch main.
+
++-- Aplikasi akan tersedia di: https://express-rest-434589199417.asia-southeast2.run.app
+...
+```
+
+## Dokumentasi Teknis
+- CI/CD: GitHub Actions Workflow
+- API Documentation: Swagger UI
+
+## Link Penting
+
+```s
+...
+Repository: https://github.com/arelsaputra/express-rest-project
+Aplikasi Live: https://express-rest-434589199417.asia-southeast2.run.app
+Pipeline: GitHub Actions
+...
+```
 ## Quick set up
 
 You can quickly start with this template with npm or npx by entering
