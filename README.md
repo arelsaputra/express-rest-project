@@ -30,7 +30,7 @@ This project is a REST API application implementation using Express.js and Postg
 
 1. Autoscaling Configuration in Google Cloud Run
    
-https://Picture9.png
+https://drive.google.com/drive/folders/1niffWIxLzm3YLdQbfN0buTD_HRGhYahS?usp=sharing
 ```s
 ...
 +-- Min instances: 1 (to reduce cold starts)
@@ -41,7 +41,7 @@ https://Picture9.png
 
 2. API Documentation with Swagger UI
    
-https://Picture5.png
+https://drive.google.com/drive/folders/1ffcqusaRj0zMyL8BB4D3D_tS-djVNHgP?usp=sharing
 ```s
 ...
 +-- Available at: https://express-rest-434589199417.asia-southeast2.run.app/api-docs
@@ -50,7 +50,7 @@ https://Picture5.png
 
 3. Dashboard Monitoring
    
-https://Picture5.png
+https://drive.google.com/drive/folders/1IqzOW9KTgi6T51hKj4a6DvLBKk2JsgSi?usp=sharing
 ```s
 ...
 +-- Google Cloud Monitoring is active
@@ -60,7 +60,7 @@ https://Picture5.png
 
 4. Testing API with Postman
    
-https://Picture4.png
+[https://Picture4.png](https://drive.google.com/drive/folders/1mzX8FxjGRxJw2QrlIefrN88EvPIjTk1r?usp=sharing)
 ```s
 ...
 +-- API endpoint has been successfully tested with Postman
